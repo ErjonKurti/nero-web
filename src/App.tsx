@@ -60,32 +60,32 @@ export default function App() {
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 flex-1 gap-4">
 
         {/* Main Hero Feature */}
-        <div className="md:col-span-12 lg:col-span-12 rounded-[3rem] bg-gradient-to-t from-black via-black/40 to-transparent relative overflow-hidden group border border-white/5 aspect-video flex items-end shadow-2xl">
+        <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-t from-black via-black/40 to-transparent relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl">
           <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center -z-10 opacity-70 group-hover:scale-105 transition-transform duration-700"></div>
-          <div className="absolute inset-0 bg-black/40 -z-10"></div>
-          <div className="absolute inset-x-0 bottom-0 py-12 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-          <div className="relative p-6 md:p-10 w-full z-10">
-            <span className="px-3 py-1 bg-red-600/20 text-red-500 text-xs font-bold rounded-md uppercase tracking-widest mb-4 inline-block border border-red-500/30 backdrop-blur-md">
+          <div className="absolute inset-0 bg-black/30 -z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent -z-10"></div>
+          <div className="relative p-6 sm:p-8 md:p-10 w-full z-10">
+            <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[10px] sm:text-xs font-bold rounded-md uppercase tracking-widest mb-3 sm:mb-4 inline-block border border-red-500/30 backdrop-blur-md">
               {t.hero.badge}
             </span>
-            <h1 className="text-5xl md:text-7xl font-black mb-4 leading-[0.9]">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-3 sm:mb-4 leading-[1.0] sm:leading-[0.9]">
               {t.hero.title1}<br />
               <span className="text-red-600">{t.hero.title2}</span>
             </h1>
-            <p className="text-lg text-white/60 max-w-lg mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-lg mb-6 sm:mb-8 leading-relaxed">
               {t.hero.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="#download"
-                className="bg-white text-black px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-white/90 transition-colors"
+                className="bg-white text-black px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/90 text-sm sm:text-base transition-colors"
               >
                 <Download className="w-5 h-5 stroke-[2.5]" /> {t.hero.downloadApp}
               </a>
               <a
                 href="/NERO IPTV Setup.exe"
                 download
-                className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-white/10 transition-colors cursor-pointer"
+                className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/10 text-sm sm:text-base transition-colors cursor-pointer"
               >
                 <MonitorPlay className="w-5 h-5 stroke-[2.5]" /> {t.hero.webApp}
               </a>
@@ -113,7 +113,7 @@ export default function App() {
         </div>
 
         {/* Nero Player Features */}
-        <div className="md:col-span-12 lg:col-span-12 md:row-span-2 mt-15 bg-gradient-to-r from-red-600 to-red-900 rounded-[3rem] p-8 md:p-12 relative overflow-hidden group">
+        <div className="hidden sm:block md:col-span-12 lg:col-span-12 md:row-span-2 mt-15 bg-gradient-to-r from-red-600 to-red-900 rounded-[3rem] p-8 md:p-12 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
