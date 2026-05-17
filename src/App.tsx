@@ -27,9 +27,13 @@ export default function App() {
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <button className="hidden sm:flex bg-red-600/10 text-red-500 px-4 py-2 text-xs md:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all items-center gap-2 whitespace-nowrap">
+          <a
+            href="/NERO IPTV Setup.exe"
+            download
+            className="hidden sm:flex bg-red-600/10 text-red-500 px-4 py-2 text-xs md:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all items-center gap-2 whitespace-nowrap cursor-pointer"
+          >
             <MonitorPlay size={16} /> {t.nav.webVersion}
-          </button>
+          </a>
 
           <div className="hidden sm:flex bg-[#1a1a1a] p-1 rounded-full border border-white/10">
             <button
@@ -78,11 +82,13 @@ export default function App() {
               >
                 <Download className="w-5 h-5 stroke-[2.5]" /> {t.hero.downloadApp}
               </a>
-              <button
-                className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-white/10 transition-colors"
+              <a
+                href="/NERO IPTV Setup.exe"
+                download
+                className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-white/10 transition-colors cursor-pointer"
               >
                 <MonitorPlay className="w-5 h-5 stroke-[2.5]" /> {t.hero.webApp}
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -272,9 +278,13 @@ export default function App() {
               <p className="text-white/50 text-sm mb-6 leading-relaxed px-4">{t.cta.windows.desc}</p>
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.windows.version}</div>
-                <button className="w-full bg-white text-black py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-600 hover:text-white transition-all shadow-xl shadow-black/20">
+                <a
+                  href="/NERO IPTV Setup.exe"
+                  download
+                  className="w-full bg-white text-black py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-600 hover:text-white transition-all shadow-xl shadow-black/20 cursor-pointer"
+                >
                   <Download size={18} /> {t.cta.download}
-                </button>
+                </a>
               </div>
             </div>
 
@@ -287,14 +297,18 @@ export default function App() {
               <p className="text-white/50 text-sm mb-6 leading-relaxed px-4">{t.cta.android.desc}</p>
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.android.version}</div>
-                <button className="w-full bg-red-600 text-white py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-500 transition-all shadow-xl shadow-red-900/20">
+                <a
+                  href="/app-release.apk"
+                  download
+                  className="w-full bg-red-600 text-white py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-500 transition-all shadow-xl shadow-red-900/20 cursor-pointer"
+                >
                   <Download size={18} /> {t.cta.download}
-                </button>
+                </a>
               </div>
             </div>
 
             {/* iOS Download */}
-            <div className="bg-black/40 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col items-center group hover:border-red-500/30 transition-all duration-500">
+            <div className="bg-black/40 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col items-center group hover:border-red-500/30 transition-all duration-500 opacity-60">
               <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                 <Apple size={40} className="text-white group-hover:text-red-500 transition-colors" />
               </div>
@@ -302,8 +316,11 @@ export default function App() {
               <p className="text-white/50 text-sm mb-6 leading-relaxed px-4">{t.cta.ios.desc}</p>
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.ios.version}</div>
-                <button className="w-full bg-white text-black py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-600 hover:text-white transition-all shadow-xl shadow-black/20">
-                  <Download size={18} /> {t.cta.download}
+                <button
+                  disabled
+                  className="w-full bg-zinc-800/50 border border-zinc-700/50 text-zinc-500 py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 cursor-not-allowed transition-all"
+                >
+                  <X size={18} /> {t.cta.comingSoon}
                 </button>
               </div>
             </div>

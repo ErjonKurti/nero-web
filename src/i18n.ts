@@ -5,7 +5,7 @@ export const translations = {
       features: "Features",
       download: "Download",
       signIn: "Sign In",
-      webVersion: "Web App",
+      webVersion: "Windows App",
     },
     hero: {
       badge: "Now Available",
@@ -13,7 +13,7 @@ export const translations = {
       title2: "TV & Movies",
       subtitle: "Discover an immersive library of titles in stunning quality constraint-free.",
       downloadApp: "Download App",
-      webApp: "Launch Web App",
+      webApp: "Windows App",
     },
     platforms: {
       title: "Available Everywhere",
@@ -86,10 +86,11 @@ export const translations = {
       subtitle: "Experience NERO IPTV on all your devices. Download our native apps for the best performance.",
       placeholder: "Email address",
       download: "Download Now",
+      comingSoon: "Coming Soon",
       windows: {
         title: "Windows Desktop",
         desc: "Full-featured desktop experience with hardware acceleration.",
-        version: "v1.0.4",
+        version: "v1.0.4 (EXE Setup)",
       },
       android: {
         title: "Android Mobile/TV",
@@ -98,8 +99,8 @@ export const translations = {
       },
       ios: {
         title: "iPhone / iPad",
-        desc: "Pure iOS experience with full Retina support and AirPlay.",
-        version: "v1.0.4 (App Store)",
+        desc: "iOS application is currently under development. Stay tuned for the release!",
+        version: "Coming Soon",
       }
     },
     appInfo: {
@@ -196,7 +197,7 @@ export const translations = {
       features: "Veçoritë",
       download: "Shkarkime",
       signIn: "Kyçu",
-      webVersion: "Web App",
+      webVersion: "Windows App",
     },
     hero: {
       badge: "E Disponueshme",
@@ -204,7 +205,7 @@ export const translations = {
       title2: "Filma & TV",
       subtitle: "Eksploroni bibliotekën e filmave me rezolucion mahnitës në çdo pajisje.",
       downloadApp: "Shkarko App",
-      webApp: "Hap Web App",
+      webApp: "Windows App",
     },
     platforms: {
       title: "Kudo me ty",
@@ -276,10 +277,11 @@ export const translations = {
       subtitle: "Përjetoni NERO IPTV në të gjitha pajisjet tuaja. Shkarkoni aplikacionet tona native.",
       placeholder: "Adresa email",
       download: "Shkarko Tani",
+      comingSoon: "Së Shpejti",
       windows: {
         title: "Windows Desktop",
         desc: "Eksperiencë e plotë për desktop me përshpejtim harduerik.",
-        version: "v1.0.4",
+        version: "v1.0.4 (EXE Setup)",
       },
       android: {
         title: "Android Mobile/TV",
@@ -288,8 +290,8 @@ export const translations = {
       },
       ios: {
         title: "iPhone / iPad",
-        desc: "Eksperiencë e pastër iOS me mbështetje Retina dhe AirPlay.",
-        version: "v1.0.4 (App Store)",
+        desc: "Aplikacioni iOS është aktualisht në zhvillim e sipër. Qëndroni me ne për lançimin!",
+        version: "Së Shpejti",
       }
     },
     appInfo: {
