@@ -28,8 +28,7 @@ export default function App() {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href="/NERO IPTV Setup.exe"
-            download
+            href="https://github.com/ErjonKurti/nero-iptv/releases/download/v1.0.4/NERO.IPTV.Setup.exe"
             className="hidden sm:flex bg-red-600/10 text-red-500 px-4 py-2 text-xs md:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all items-center gap-2 whitespace-nowrap cursor-pointer"
           >
             <MonitorPlay size={16} /> {t.nav.webVersion}
@@ -83,8 +82,7 @@ export default function App() {
                 <Download className="w-5 h-5 stroke-[2.5]" /> {t.hero.downloadApp}
               </a>
               <a
-                href="/NERO IPTV Setup.exe"
-                download
+                href="https://github.com/ErjonKurti/nero-iptv/releases/download/v1.0.4/NERO.IPTV.Setup.exe"
                 className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/10 text-sm sm:text-base transition-colors cursor-pointer"
               >
                 <MonitorPlay className="w-5 h-5 stroke-[2.5]" /> {t.hero.webApp}
@@ -279,8 +277,7 @@ export default function App() {
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.windows.version}</div>
                 <a
-                  href="/NERO IPTV Setup.exe"
-                  download
+                  href="https://github.com/ErjonKurti/nero-iptv/releases/download/v1.0.4/NERO.IPTV.Setup.exe"
                   className="w-full bg-white text-black py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-600 hover:text-white transition-all shadow-xl shadow-black/20 cursor-pointer"
                 >
                   <Download size={18} /> {t.cta.download}
@@ -298,8 +295,7 @@ export default function App() {
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.android.version}</div>
                 <a
-                  href="/app-release.apk"
-                  download
+                  href="https://github.com/ErjonKurti/nero-iptv/releases/download/v1.0.4/app-release.apk"
                   className="w-full bg-red-600 text-white py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-500 transition-all shadow-xl shadow-red-900/20 cursor-pointer"
                 >
                   <Download size={18} /> {t.cta.download}
