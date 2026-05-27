@@ -324,6 +324,71 @@ export default function App() {
             </div>
           </div>
 
+          {/* TV Installation Guide */}
+          <div className="relative z-10 w-full max-w-6xl mx-auto mt-12">
+            <div className="border border-white/10 rounded-[2.5rem] overflow-hidden">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-red-900/40 to-black p-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b border-white/10">
+                <div className="w-14 h-14 bg-red-600/20 rounded-2xl flex items-center justify-center shrink-0 border border-red-500/30">
+                  <Tv size={28} className="text-red-500" />
+                </div>
+                <div className="text-left">
+                  <h4 className="text-xl font-black mb-1">Install on Android TV / Firestick</h4>
+                  <p className="text-white/50 text-sm font-medium">Follow these simple steps to sideload NERO on your TV device using the free <span className="text-white/80 font-bold">Downloader</span> app.</p>
+                </div>
+              </div>
+
+              {/* Steps */}
+              <div className="bg-black/40 backdrop-blur-xl p-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  {/* Step 1 */}
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0 mt-0.5">1</div>
+                    <div className="text-left">
+                      <h5 className="font-bold text-sm mb-1">Install Downloader App</h5>
+                      <p className="text-white/50 text-xs leading-relaxed">On your TV, open the App Store / Amazon App Store and search for <span className="text-white/80 font-bold">"Downloader by AFTVnews"</span>. Install it for free.</p>
+                    </div>
+                  </div>
+                  {/* Step 2 */}
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0 mt-0.5">2</div>
+                    <div className="text-left">
+                      <h5 className="font-bold text-sm mb-1">Enable Unknown Sources</h5>
+                      <p className="text-white/50 text-xs leading-relaxed">Go to your TV <span className="text-white/80 font-bold">Settings → Security</span> and enable <span className="text-white/80 font-bold">"Install from Unknown Sources"</span> for the Downloader app.</p>
+                    </div>
+                  </div>
+                  {/* Step 3 */}
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0 mt-0.5">3</div>
+                    <div className="text-left">
+                      <h5 className="font-bold text-sm mb-1">Enter the Download Link</h5>
+                      <p className="text-white/50 text-xs leading-relaxed">Open Downloader, tap the URL bar and type the link below. It will download and install NERO TV automatically.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Link Box */}
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="text-left">
+                    <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-1">Direct Download Link for Downloader App</div>
+                    <code className="text-red-400 font-bold text-sm break-all">drive.google.com/file/d/1XmUXHCqYTUSs6N1kqI8O85IWBtqe53XF/view</code>
+                  </div>
+                  <a
+                    href="https://drive.google.com/file/d/1XmUXHCqYTUSs6N1kqI8O85IWBtqe53XF/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 bg-red-600 text-white px-6 py-3 rounded-xl font-black text-sm flex items-center gap-2 hover:bg-red-500 transition-all whitespace-nowrap"
+                  >
+                    <Download size={16} /> Get APK
+                  </a>
+                </div>
+
+                <p className="text-white/30 text-[10px] font-bold uppercase tracking-widest text-center mt-6">
+                  ⚠ Compatible with Android TV, Google TV, Amazon Firestick & Fire TV · Samsung/LG Smart TVs are not supported
+                </p>
+              </div>
+            </div>
+          </div>
 
         </div>
 
