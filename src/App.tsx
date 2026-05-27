@@ -295,7 +295,7 @@ export default function App() {
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.android.version}</div>
                 <a
-                  href="https://github.com/ErjonKurti/nero-iptv/releases/download/V1.1.0/app-release.apk"
+                  href="https://github.com/ErjonKurti/nero-iptv/releases/download/V1.1.0/NERO.TV.apk"
                   className="w-full bg-red-600 text-white py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-500 transition-all shadow-xl shadow-red-900/20 cursor-pointer"
                 >
                   <Download size={18} /> {t.cta.download}
