@@ -1,10 +1,17 @@
 import { useState } from 'react';
-import { Tv, Film, MonitorPlay, Globe, Shield, X, Download, Users, CheckCircle, Smartphone, Apple, Zap, ChevronDown, PlayCircle, Trophy, Heart } from 'lucide-react';
+import { Tv, Film, MonitorPlay, Globe, Shield, X, Download, Users, CheckCircle, Smartphone, Apple, Zap, ChevronDown, PlayCircle, Trophy, Heart, Copy, Check } from 'lucide-react';
 import { translations, Language } from './i18n';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('en');
   const [showSignIn, setShowSignIn] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText('https://drive.google.com/file/d/1XmUXHCqYTUSs6N1kqI8O85IWBtqe53XF/view?usp=sharing');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const t = translations[lang];
 
@@ -369,18 +376,30 @@ export default function App() {
 
                 {/* Link Box */}
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-left">
+                  <div className="text-left flex-1 min-w-0">
                     <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-1">Direct Download Link for Downloader App</div>
                     <code className="text-red-400 font-bold text-sm break-all">drive.google.com/file/d/1XmUXHCqYTUSs6N1kqI8O85IWBtqe53XF/view</code>
                   </div>
-                  <a
-                    href="https://drive.google.com/file/d/1XmUXHCqYTUSs6N1kqI8O85IWBtqe53XF/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shrink-0 bg-red-600 text-white px-6 py-3 rounded-xl font-black text-sm flex items-center gap-2 hover:bg-red-500 transition-all whitespace-nowrap"
-                  >
-                    <Download size={16} /> Get APK
-                  </a>
+                  <div className="flex gap-3 shrink-0">
+                    <button
+                      onClick={handleCopyLink}
+                      className={`px-5 py-3 rounded-xl font-black text-sm flex items-center gap-2 transition-all whitespace-nowrap border ${
+                        copied
+                          ? 'bg-green-600/20 border-green-500/40 text-green-400'
+                          : 'bg-white/10 border-white/20 text-white hover:bg-white/20'
+                      }`}
+                    >
+                      {copied ? <><Check size={16} /> Copied!</> : <><Copy size={16} /> Copy Link</>}
+                    </button>
+                    <a
+                      href="https://drive.google.com/file/d/1XmUXHCqYTUSs6N1kqI8O85IWBtqe53XF/view?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-red-600 text-white px-5 py-3 rounded-xl font-black text-sm flex items-center gap-2 hover:bg-red-500 transition-all whitespace-nowrap"
+                    >
+                      <Download size={16} /> Get APK
+                    </a>
+                  </div>
                 </div>
 
                 <p className="text-white/30 text-[10px] font-bold uppercase tracking-widest text-center mt-6">
