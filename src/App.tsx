@@ -8,7 +8,7 @@ export default function App() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText('https://drive.google.com/file/d/19jPTIAmQ9O1bBSEAkcurFhAl7ci9qbh_/view?usp=drive_link');
+    navigator.clipboard.writeText('https://drive.google.com/file/d/1bD1Fb7kDA2Zy2Ea_yEutSLznmGrbjj_6/view?usp=sharing');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -302,7 +302,7 @@ export default function App() {
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.android.version}</div>
                 <a
-                  href="https://drive.google.com/file/d/19jPTIAmQ9O1bBSEAkcurFhAl7ci9qbh_/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1bD1Fb7kDA2Zy2Ea_yEutSLznmGrbjj_6/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-red-600 text-white py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-500 transition-all shadow-xl shadow-red-900/20 cursor-pointer"
@@ -378,7 +378,7 @@ export default function App() {
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-left flex-1 min-w-0">
                     <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-1">Direct Download Link for Downloader App</div>
-                    <code className="text-red-400 font-bold text-sm break-all">drive.google.com/file/d/19jPTIAmQ9O1bBSEAkcurFhAl7ci9qbh_/view</code>
+                    <code className="text-red-400 font-bold text-sm break-all">drive.google.com/file/d/1bD1Fb7kDA2Zy2Ea_yEutSLznmGrbjj_6/view</code>
                   </div>
                   <div className="flex gap-3 shrink-0">
                     <button
@@ -392,7 +392,7 @@ export default function App() {
                       {copied ? <><Check size={16} /> Copied!</> : <><Copy size={16} /> Copy Link</>}
                     </button>
                     <a
-                      href="https://drive.google.com/file/d/19jPTIAmQ9O1bBSEAkcurFhAl7ci9qbh_/view?usp=drive_link"
+                      href="https://drive.google.com/file/d/1bD1Fb7kDA2Zy2Ea_yEutSLznmGrbjj_6/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-red-600 text-white px-5 py-3 rounded-xl font-black text-sm flex items-center gap-2 hover:bg-red-500 transition-all whitespace-nowrap"
