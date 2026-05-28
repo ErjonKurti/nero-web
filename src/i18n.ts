@@ -90,12 +90,12 @@ export const translations = {
       windows: {
         title: "Windows Desktop",
         desc: "Full-featured desktop experience with hardware acceleration.",
-        version: "v1.0.4 (EXE Setup)",
+        version: "v1.2.1 (EXE Setup)",
       },
       android: {
         title: "Android Mobile/TV",
         desc: "Optimized for smartphones, tablets, and Android TV boxes.",
-        version: "v1.0.4 (APK)",
+        version: "v1.2.1 (APK)",
       },
       ios: {
         title: "iPhone / iPad",
@@ -281,12 +281,12 @@ export const translations = {
       windows: {
         title: "Windows Desktop",
         desc: "Eksperiencë e plotë për desktop me përshpejtim harduerik.",
-        version: "v1.0.4 (EXE Setup)",
+        version: "v1.2.1 (EXE Setup)",
       },
       android: {
         title: "Android Mobile/TV",
         desc: "Optimizuar për telefona, tableta dhe pajisje Android TV.",
-        version: "v1.0.4 (APK)",
+        version: "v1.2.1 (APK)",
       },
       ios: {
         title: "iPhone / iPad",
