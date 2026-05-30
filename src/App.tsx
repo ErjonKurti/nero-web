@@ -8,7 +8,7 @@ export default function App() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText('https://github.com/ErjonKurti/nero-web/raw/main/app/Nero_TV_V1.4.4.apk');
+    navigator.clipboard.writeText(window.location.origin + '/app/Nero_TV_V1.4.4.apk');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -35,7 +35,8 @@ export default function App() {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/ErjonKurti/nero-web/raw/main/app/Nero_TV_Installer_v1.4.4.exe"
+            href="/app/Nero_TV_Installer_v1.4.4.exe"
+            download
             className="hidden sm:flex bg-red-600/10 text-red-500 px-4 py-2 text-xs md:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all items-center gap-2 whitespace-nowrap cursor-pointer"
           >
             <MonitorPlay size={16} /> {t.nav.webVersion}
@@ -89,7 +90,8 @@ export default function App() {
                 <Download className="w-5 h-5 stroke-[2.5]" /> {t.hero.downloadApp}
               </a>
               <a
-                href="https://github.com/ErjonKurti/nero-web/raw/main/app/Nero_TV_Installer_v1.4.4.exe"
+                href="/app/Nero_TV_Installer_v1.4.4.exe"
+                download
                 className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/10 text-sm sm:text-base transition-colors cursor-pointer"
               >
                 <MonitorPlay className="w-5 h-5 stroke-[2.5]" /> {t.hero.webApp}
@@ -284,7 +286,7 @@ export default function App() {
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.windows.version}</div>
                 <a
-                  href="https://github.com/ErjonKurti/nero-web/raw/main/app/Nero_TV_Installer_v1.4.4.exe"
+                  href="/app/Nero_TV_Installer_v1.4.4.exe"
                   download
                   className="w-full bg-white text-black py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-600 hover:text-white transition-all shadow-xl shadow-black/20 cursor-pointer"
                 >
@@ -303,7 +305,7 @@ export default function App() {
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.android.version}</div>
                 <a
-                  href="https://github.com/ErjonKurti/nero-web/raw/main/app/Nero_TV_V1.4.4.apk"
+                  href="/app/Nero_TV_V1.4.4.apk"
                   download
                   className="w-full bg-red-600 text-white py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-500 transition-all shadow-xl shadow-red-900/20 cursor-pointer"
                 >
@@ -378,7 +380,7 @@ export default function App() {
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-left flex-1 min-w-0">
                     <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-1">Direct Download Link for Downloader App</div>
-                    <code className="text-red-400 font-bold text-sm break-all">github.com/ErjonKurti/nero-web/raw/main/app/Nero_TV_V1.4.4.apk</code>
+                    <code className="text-red-400 font-bold text-sm break-all">{window.location.host}/app/Nero_TV_V1.4.4.apk</code>
                   </div>
                   <div className="flex gap-3 shrink-0">
                     <button
@@ -392,7 +394,7 @@ export default function App() {
                       {copied ? <><Check size={16} /> Copied!</> : <><Copy size={16} /> Copy Link</>}
                     </button>
                     <a
-                      href="https://github.com/ErjonKurti/nero-web/raw/main/app/Nero_TV_V1.4.4.apk"
+                      href="/app/Nero_TV_V1.4.4.apk"
                       download
                       className="bg-red-600 text-white px-5 py-3 rounded-xl font-black text-sm flex items-center gap-2 hover:bg-red-500 transition-all whitespace-nowrap"
                     >
