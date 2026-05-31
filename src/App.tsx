@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Tv, Film, MonitorPlay, Globe, Shield, X, Download, Users, CheckCircle, Smartphone, Apple, Zap, ChevronDown, PlayCircle, Trophy, Heart, Copy, Check } from 'lucide-react';
 import { translations, Language } from './i18n';
+import { useTVNav } from './hooks/useTVNav';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('en');
   const [showSignIn, setShowSignIn] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  // TV Remote spatial navigation
+  useEffect(() => {
+    const cleanup = useTVNav();
+    return cleanup;
+  }, []);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.origin + '/app/Nero_TV_V1.4.4.apk');

@@ -39,3 +39,46 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-nero-red);
 }
+
+/* ─── TV Remote Focus Styles ─── */
+/* Remove default browser outline */
+* {
+  outline: none;
+}
+
+/* Global focus ring for all interactive elements */
+:focus-visible,
+a:focus,
+button:focus,
+[tabindex]:focus,
+summary:focus {
+  outline: 3px solid #dc2626 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.25), 0 0 20px rgba(220, 38, 38, 0.4) !important;
+  border-radius: 12px;
+  transition: outline 0.1s, box-shadow 0.1s;
+  position: relative;
+  z-index: 99;
+}
+
+/* Scale up focused buttons slightly for TV visibility */
+button:focus,
+a:focus {
+  transform: scale(1.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* FAQ summary focus */
+details > summary:focus {
+  background: rgba(220, 38, 38, 0.08);
+  border-radius: 12px;
+}
+
+/* Pricing card focus */
+[data-tv-focusable]:focus {
+  outline: 3px solid #dc2626 !important;
+  box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.25), 0 0 30px rgba(220, 38, 38, 0.3) !important;
+  border-color: rgba(220, 38, 38, 0.5) !important;
+  transform: scale(1.02);
+  transition: all 0.15s ease;
+}
