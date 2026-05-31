@@ -17,7 +17,7 @@ export function AudioExperience({ lang }: { lang: Language }) {
     // We use fallbacks to external links just for testing if local files aren't found
     bgAudioRef.current = new Audio(BG_MUSIC_URL);
     bgAudioRef.current.loop = false; // We will stop it after 1 minute anyway
-    bgAudioRef.current.volume = 0.4; 
+    bgAudioRef.current.volume = 0.6; 
 
     voiceAudioRef.current = new Audio(EN_VOICEOVER_URL);
     voiceAudioRef.current.volume = 1.0;
