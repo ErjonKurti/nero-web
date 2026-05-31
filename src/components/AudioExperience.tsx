@@ -22,9 +22,31 @@ export function AudioExperience({ lang, onStart }: { lang: Language, onStart?: (
     voiceAudioRef.current = new Audio(EN_VOICEOVER_URL);
     voiceAudioRef.current.volume = 1.0;
 
+    // Handle fading out background music 3 seconds after the voice finishes
+    const handleVoiceEnded = () => {
+      setTimeout(() => {
+        const fadeInterval = setInterval(() => {
+          if (bgAudioRef.current && bgAudioRef.current.volume > 0.05) {
+            bgAudioRef.current.volume -= 0.05;
+          } else {
+            clearInterval(fadeInterval);
+            bgAudioRef.current?.pause();
+          }
+        }, 200);
+      }, 3000); // Wait 3 seconds after voice ends
+    };
+
+    const currentVoiceRef = voiceAudioRef.current;
+    if (currentVoiceRef) {
+      currentVoiceRef.addEventListener('ended', handleVoiceEnded);
+    }
+
     return () => {
       bgAudioRef.current?.pause();
-      voiceAudioRef.current?.pause();
+      currentVoiceRef?.pause();
+      if (currentVoiceRef) {
+        currentVoiceRef.removeEventListener('ended', handleVoiceEnded);
+      }
     };
   }, []);
 
@@ -40,19 +62,6 @@ export function AudioExperience({ lang, onStart }: { lang: Language, onStart?: (
     // Play the audio (catch errors if files are missing)
     bgAudioRef.current?.play().catch(e => console.log('Audio file missing or blocked:', e));
     voiceAudioRef.current?.play().catch(e => console.log('Audio file missing or blocked:', e));
-
-    // Fade out and stop completely after 35 seconds
-    setTimeout(() => {
-      const fadeInterval = setInterval(() => {
-        if (bgAudioRef.current && bgAudioRef.current.volume > 0.05) {
-          bgAudioRef.current.volume -= 0.05;
-        } else {
-          clearInterval(fadeInterval);
-          bgAudioRef.current?.pause();
-          voiceAudioRef.current?.pause();
-        }
-      }, 200); // Reduce volume every 200ms
-    }, 35000); // Start fading at 35 seconds
   };
 
   // The overlay before starting
