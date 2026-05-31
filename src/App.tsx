@@ -36,11 +36,11 @@ export default function App() {
         <div className="flex justify-between items-center px-2 sm:px-4">
           {/* Left: Logo + desktop nav links */}
           <div className="flex items-center gap-6">
-            <span className="text-3xl sm:text-4xl font-black tracking-tighter text-red-600">NERO</span>
+            <a href="#" tabIndex={0} className="text-3xl sm:text-4xl font-black tracking-tighter text-red-600 outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded">NERO</a>
             <div className="hidden lg:flex gap-6 text-sm font-medium opacity-60">
-              <a href="#pricing" className="hover:opacity-100">{t.nav.pricing}</a>
-              <a href="#features" className="hover:opacity-100">{t.nav.features}</a>
-              <a href="#download" className="hover:opacity-100">{t.nav.download}</a>
+              <a href="#pricing" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.pricing}</a>
+              <a href="#features" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.features}</a>
+              <a href="#download" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.download}</a>
             </div>
           </div>
 
@@ -85,9 +85,9 @@ export default function App() {
 
         {/* Mobile-only sub-row: page section links */}
         <div className="flex lg:hidden justify-center gap-5 mt-2 pb-1 text-[11px] font-semibold text-white/40 px-4 border-t border-white/5 pt-2">
-          <a href="#pricing" className="hover:text-white transition-colors">{t.nav.pricing}</a>
-          <a href="#features" className="hover:text-white transition-colors">{t.nav.features}</a>
-          <a href="#download" className="hover:text-white transition-colors">{t.nav.download}</a>
+          <a href="#pricing" tabIndex={0} className="hover:text-white transition-colors outline-none focus:text-white py-1 px-2 rounded">{t.nav.pricing}</a>
+          <a href="#features" tabIndex={0} className="hover:text-white transition-colors outline-none focus:text-white py-1 px-2 rounded">{t.nav.features}</a>
+          <a href="#download" tabIndex={0} className="hover:text-white transition-colors outline-none focus:text-white py-1 px-2 rounded">{t.nav.download}</a>
         </div>
       </nav>
 
