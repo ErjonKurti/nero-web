@@ -31,45 +31,66 @@ export default function App() {
       }} />
 
       {/* Header Navigation */}
-      <nav className="relative z-50 flex justify-between items-center px-4 shrink-0">
-        <div className="flex items-center gap-8">
-          <span className="text-4xl font-black tracking-tighter text-red-600">NERO</span>
-          <div className="hidden lg:flex gap-6 text-sm font-medium opacity-60">
-            <a href="#pricing" className="hover:opacity-100">{t.nav.pricing}</a>
-            <a href="#features" className="hover:opacity-100">{t.nav.features}</a>
-            <a href="#download" className="hover:opacity-100">{t.nav.download}</a>
+      <nav className="relative z-50 shrink-0">
+        {/* Main nav row */}
+        <div className="flex justify-between items-center px-2 sm:px-4">
+          {/* Left: Logo + desktop nav links */}
+          <div className="flex items-center gap-6">
+            <span className="text-3xl sm:text-4xl font-black tracking-tighter text-red-600">NERO</span>
+            <div className="hidden lg:flex gap-6 text-sm font-medium opacity-60">
+              <a href="#pricing" className="hover:opacity-100">{t.nav.pricing}</a>
+              <a href="#features" className="hover:opacity-100">{t.nav.features}</a>
+              <a href="#download" className="hover:opacity-100">{t.nav.download}</a>
+            </div>
+          </div>
+
+          {/* Right: all buttons */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Web App button — icon only on mobile, label on sm+ */}
+            <a
+              href="https://live.neroapp.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 bg-red-600/10 text-red-500 px-2.5 sm:px-4 py-2 text-xs sm:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all whitespace-nowrap cursor-pointer"
+            >
+              <MonitorPlay size={15} />
+              <span className="hidden xs:inline sm:inline">{t.nav.webVersion}</span>
+            </a>
+
+            {/* Language toggle — always visible */}
+            <div className="flex bg-[#1a1a1a] p-0.5 sm:p-1 rounded-full border border-white/10">
+              <button
+                onClick={() => setLang('en')}
+                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black rounded-full transition-all ${lang === 'en' ? 'bg-white text-black shadow-lg' : 'text-white/50 hover:text-white'}`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('sq')}
+                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black rounded-full transition-all ${lang === 'sq' ? 'bg-white text-black shadow-lg' : 'text-white/50 hover:text-white'}`}
+              >
+                AL
+              </button>
+            </div>
+
+            {/* Get Started */}
+            <a
+              href="#pricing"
+              className="px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-red-600 text-white text-xs sm:text-sm font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20 whitespace-nowrap"
+            >
+              {t.nav.getStarted ?? 'Get Started'}
+            </a>
           </div>
         </div>
-        <div className="flex items-center gap-4">
-          <a
-            href="https://live.neroapp.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex bg-red-600/10 text-red-500 px-4 py-2 text-xs md:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all items-center gap-2 whitespace-nowrap cursor-pointer"
-          >
-            <MonitorPlay size={16} /> {t.nav.webVersion}
-          </a>
 
-          <div className="hidden sm:flex bg-[#1a1a1a] p-1 rounded-full border border-white/10">
-            <button
-              onClick={() => setLang('en')}
-              className={`px-3 md:px-4 py-1.5 text-xs font-bold rounded-full transition-all ${lang === 'en' ? 'bg-white text-black shadow-lg' : 'text-white/50 hover:text-white'}`}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => setLang('sq')}
-              className={`px-3 md:px-4 py-1.5 text-xs font-bold rounded-full transition-all ${lang === 'sq' ? 'bg-white text-black shadow-lg' : 'text-white/50 hover:text-white'}`}
-            >
-              AL
-            </button>
-          </div>
-
-          <a href="#pricing" className="px-6 py-2 rounded-full bg-red-600 text-white text-sm font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20">
-            Get Started
-          </a>
+        {/* Mobile-only sub-row: page section links */}
+        <div className="flex lg:hidden justify-center gap-5 mt-2 pb-1 text-[11px] font-semibold text-white/40 px-4 border-t border-white/5 pt-2">
+          <a href="#pricing" className="hover:text-white transition-colors">{t.nav.pricing}</a>
+          <a href="#features" className="hover:text-white transition-colors">{t.nav.features}</a>
+          <a href="#download" className="hover:text-white transition-colors">{t.nav.download}</a>
         </div>
       </nav>
+
 
       {/* Bento Grid Main Layout */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 flex-1 gap-4">
