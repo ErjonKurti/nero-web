@@ -122,8 +122,21 @@ export default function App() {
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 flex-1 gap-4">
 
         {/* Main Hero Feature */}
-        <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-t from-black via-black/40 to-transparent relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl">
-          <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center -z-10 opacity-70 group-hover:scale-105 transition-transform duration-700"></div>
+        <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-black relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl transition-all duration-1000">
+          {experienceStarted ? (
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover -z-10 opacity-70 animate-fade-in"
+            >
+              <source src="/hero-bg.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center -z-10 opacity-30 grayscale transition-all duration-1000"></div>
+          )}
+          
           <div className="absolute inset-0 bg-black/30 -z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent -z-10"></div>
           <div className="relative p-6 sm:p-8 md:p-10 w-full z-10">
