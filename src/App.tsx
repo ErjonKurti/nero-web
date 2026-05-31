@@ -1,52 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Tv, Film, MonitorPlay, Globe, Shield, X, Download, Users, CheckCircle, Smartphone, Apple, Zap, ChevronDown, PlayCircle, Trophy, Heart, Copy, Check } from 'lucide-react';
 import { translations, Language } from './i18n';
 import { useTVNav } from './hooks/useTVNav';
-import { AudioExperience } from './components/AudioExperience';
-
-const TypewriterText = ({ text, speed = 40, delay = 0, start = false }: { text: string, speed?: number, delay?: number, start?: boolean }) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [isWaiting, setIsWaiting] = useState(true);
-
-  // Reset when text changes (e.g., language switch)
-  useEffect(() => {
-    setDisplayedText('');
-    setIsWaiting(true);
-  }, [text]);
-
-  useEffect(() => {
-    if (!start) return;
-    
-    if (isWaiting) {
-      const t = setTimeout(() => setIsWaiting(false), delay);
-      return () => clearTimeout(t);
-    }
-
-    if (displayedText.length < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, displayedText.length + 1));
-      }, speed);
-      return () => clearTimeout(timeout);
-    }
-  }, [displayedText, start, isWaiting, text, speed, delay]);
-
-  return <>{displayedText}</>;
-};
 
 export default function App() {
   const [lang, setLang] = useState<Language>('en');
   const [showSignIn, setShowSignIn] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [experienceStarted, setExperienceStarted] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Handle video playback settings (start at 10s, speed 1.2x)
-  useEffect(() => {
-    if (experienceStarted && videoRef.current) {
-      videoRef.current.currentTime = 10;
-      videoRef.current.playbackRate = 1.2;
-    }
-  }, [experienceStarted]);
 
   // TV Remote spatial navigation
   useEffect(() => {
@@ -64,9 +24,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden flex flex-col p-4 md:p-6 lg:p-8 gap-6 max-w-[1280px] mx-auto scroll-smooth">
-      <AudioExperience lang={lang} onStart={() => setExperienceStarted(true)} />
-      {/* Dynamic Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-40" style={{
+
+      {/* Background Gradient */}
+      <div className="fixed top-0 left-0 w-full h-[80vh] pointer-events-none z-0" style={{
         background: 'radial-gradient(120% 100% at 50% 0%, rgba(138, 10, 15, 0.45) 0%, rgba(5, 5, 5, 1) 100%)'
       }} />
 
@@ -131,40 +91,20 @@ export default function App() {
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 flex-1 gap-4">
 
         {/* Main Hero Feature */}
-        <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-black relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl transition-all duration-1000 z-0">
-          {experienceStarted ? (
-            <video 
-              ref={videoRef}
-              autoPlay 
-              muted 
-              playsInline
-              onEnded={() => {
-                if (videoRef.current) {
-                  videoRef.current.currentTime = 10;
-                  videoRef.current.play();
-                }
-              }}
-              className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
-            >
-              <source src="/hero-bg.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center z-0 opacity-50 grayscale transition-all duration-1000"></div>
-          )}
-          
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent z-10 pointer-events-none"></div>
-          <div className="relative p-6 sm:p-8 md:p-10 w-full z-20">
+        <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-t from-black via-black/40 to-transparent relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl">
+          <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center -z-10 opacity-70 group-hover:scale-105 transition-transform duration-700"></div>
+          <div className="absolute inset-0 bg-black/30 -z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent -z-10"></div>
+          <div className="relative p-6 sm:p-8 md:p-10 w-full z-10">
             <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[10px] sm:text-xs font-bold rounded-md uppercase tracking-widest mb-3 sm:mb-4 inline-block border border-red-500/30 backdrop-blur-md">
               {t.hero.badge}
             </span>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-3 sm:mb-4 leading-[1.0] sm:leading-[0.9] min-h-[2em]">
-              <TypewriterText text={t.hero.title1} start={experienceStarted} speed={50} delay={500} /><br />
-              <span className="text-red-600">
-                <TypewriterText text={t.hero.title2} start={experienceStarted} speed={60} delay={1500} />
-              </span>
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-3 sm:mb-4 leading-[1.0] sm:leading-[0.9]">
+              {t.hero.title1}<br />
+              <span className="text-red-600">{t.hero.title2}</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-lg mb-6 sm:mb-8 leading-relaxed min-h-[4em]">
-              <TypewriterText text={t.hero.subtitle} start={experienceStarted} speed={40} delay={2500} />
+            <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-lg mb-6 sm:mb-8 leading-relaxed">
+              {t.hero.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
