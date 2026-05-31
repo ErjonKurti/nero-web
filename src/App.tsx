@@ -40,11 +40,11 @@ export default function App() {
   const [experienceStarted, setExperienceStarted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Handle video playback settings (start at 5s, speed 1.15x)
+  // Handle video playback settings (start at 10s, speed 1.2x)
   useEffect(() => {
     if (experienceStarted && videoRef.current) {
-      videoRef.current.currentTime = 5;
-      videoRef.current.playbackRate = 1.15;
+      videoRef.current.currentTime = 10;
+      videoRef.current.playbackRate = 1.2;
     }
   }, [experienceStarted]);
 
@@ -140,7 +140,7 @@ export default function App() {
               playsInline
               onEnded={() => {
                 if (videoRef.current) {
-                  videoRef.current.currentTime = 5;
+                  videoRef.current.currentTime = 10;
                   videoRef.current.play();
                 }
               }}
