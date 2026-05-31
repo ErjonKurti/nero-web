@@ -6,7 +6,7 @@ import { translations, Language } from '../i18n';
 const BG_MUSIC_URL = '/blur-menu.webm';
 const EN_VOICEOVER_URL = '/voice.mp3';
 
-export function AudioExperience({ lang }: { lang: Language }) {
+export function AudioExperience({ lang, onStart }: { lang: Language, onStart?: () => void }) {
   const [started, setStarted] = useState(false);
   const [muted, setMuted] = useState(false);
   
@@ -35,6 +35,7 @@ export function AudioExperience({ lang }: { lang: Language }) {
 
   const handleStart = () => {
     setStarted(true);
+    if (onStart) onStart();
     
     // Play the audio (catch errors if files are missing)
     bgAudioRef.current?.play().catch(e => console.log('Audio file missing or blocked:', e));

@@ -4,10 +4,40 @@ import { translations, Language } from './i18n';
 import { useTVNav } from './hooks/useTVNav';
 import { AudioExperience } from './components/AudioExperience';
 
+const TypewriterText = ({ text, speed = 40, delay = 0, start = false }: { text: string, speed?: number, delay?: number, start?: boolean }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [isWaiting, setIsWaiting] = useState(true);
+
+  // Reset when text changes (e.g., language switch)
+  useEffect(() => {
+    setDisplayedText('');
+    setIsWaiting(true);
+  }, [text]);
+
+  useEffect(() => {
+    if (!start) return;
+    
+    if (isWaiting) {
+      const t = setTimeout(() => setIsWaiting(false), delay);
+      return () => clearTimeout(t);
+    }
+
+    if (displayedText.length < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(text.slice(0, displayedText.length + 1));
+      }, speed);
+      return () => clearTimeout(timeout);
+    }
+  }, [displayedText, start, isWaiting, text, speed, delay]);
+
+  return <>{displayedText}</>;
+};
+
 export default function App() {
   const [lang, setLang] = useState<Language>('en');
   const [showSignIn, setShowSignIn] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [experienceStarted, setExperienceStarted] = useState(false);
 
   // TV Remote spatial navigation
   useEffect(() => {
@@ -25,7 +55,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden flex flex-col p-4 md:p-6 lg:p-8 gap-6 max-w-[1280px] mx-auto scroll-smooth">
-      <AudioExperience lang={lang} />
+      <AudioExperience lang={lang} onStart={() => setExperienceStarted(true)} />
       {/* Dynamic Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-40" style={{
         background: 'radial-gradient(120% 100% at 50% 0%, rgba(138, 10, 15, 0.45) 0%, rgba(5, 5, 5, 1) 100%)'
@@ -100,12 +130,14 @@ export default function App() {
             <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[10px] sm:text-xs font-bold rounded-md uppercase tracking-widest mb-3 sm:mb-4 inline-block border border-red-500/30 backdrop-blur-md">
               {t.hero.badge}
             </span>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-3 sm:mb-4 leading-[1.0] sm:leading-[0.9]">
-              {t.hero.title1}<br />
-              <span className="text-red-600">{t.hero.title2}</span>
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-3 sm:mb-4 leading-[1.0] sm:leading-[0.9] min-h-[2em]">
+              <TypewriterText text={t.hero.title1} start={experienceStarted} speed={50} delay={500} /><br />
+              <span className="text-red-600">
+                <TypewriterText text={t.hero.title2} start={experienceStarted} speed={60} delay={1500} />
+              </span>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-lg mb-6 sm:mb-8 leading-relaxed">
-              {t.hero.subtitle}
+            <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-lg mb-6 sm:mb-8 leading-relaxed min-h-[4em]">
+              <TypewriterText text={t.hero.subtitle} start={experienceStarted} speed={40} delay={2500} />
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
