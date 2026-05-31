@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Tv, Film, MonitorPlay, Globe, Shield, X, Download, Users, CheckCircle, Smartphone, Apple, Zap, ChevronDown, PlayCircle, Trophy, Heart, Copy, Check } from 'lucide-react';
 import { translations, Language } from './i18n';
 import { useTVNav } from './hooks/useTVNav';
+import { AudioExperience } from './components/AudioExperience';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('en');
@@ -24,9 +25,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden flex flex-col p-4 md:p-6 lg:p-8 gap-6 max-w-[1280px] mx-auto scroll-smooth">
-
-      {/* Background Gradient */}
-      <div className="fixed top-0 left-0 w-full h-[80vh] pointer-events-none z-0" style={{
+      <AudioExperience lang={lang} />
+      {/* Dynamic Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-40" style={{
         background: 'radial-gradient(120% 100% at 50% 0%, rgba(138, 10, 15, 0.45) 0%, rgba(5, 5, 5, 1) 100%)'
       }} />
 
