@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Volume2, VolumeX, Power } from 'lucide-react';
 import { translations, Language } from '../i18n';
 
-// Placeholder URLs - the user will need to replace these with actual files in the public folder
-const BG_MUSIC_URL = 'https://cdn.pixabay.com/download/audio/2022/11/22/audio_febc508520.mp3?filename=ambient-space-127532.mp3';
-const EN_VOICEOVER_URL = 'https://cdn.pixabay.com/download/audio/2023/04/10/audio_b282eb1034.mp3?filename=artificial-intelligence-142851.mp3'; // Will be replaced with a Cinematic/Movie Trailer voice
+// Placeholder URLs - drop your actual MP3 files into the public folder!
+const BG_MUSIC_URL = '/blur-menu.mp3'; // E.g., the Blur PC game menu music
+const EN_VOICEOVER_URL = '/voice.mp3'; // E.g., the cinematic AI voice
 
 export function AudioExperience({ lang }: { lang: Language }) {
   const [started, setStarted] = useState(false);
@@ -14,19 +14,19 @@ export function AudioExperience({ lang }: { lang: Language }) {
   const voiceAudioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
+    // We use fallbacks to external links just for testing if local files aren't found
     bgAudioRef.current = new Audio(BG_MUSIC_URL);
-    bgAudioRef.current.loop = true;
-    bgAudioRef.current.volume = 0.3; // Low ambient volume
+    bgAudioRef.current.loop = false; // We will stop it after 1 minute anyway
+    bgAudioRef.current.volume = 0.4; 
 
-    // Always play the English cinematic voiceover, regardless of AL/EN website language
     voiceAudioRef.current = new Audio(EN_VOICEOVER_URL);
-    voiceAudioRef.current.volume = 0.9;
+    voiceAudioRef.current.volume = 1.0;
 
     return () => {
       bgAudioRef.current?.pause();
       voiceAudioRef.current?.pause();
     };
-  }, []); // Only run once to initialize
+  }, []);
 
   useEffect(() => {
     if (bgAudioRef.current) bgAudioRef.current.muted = muted;
@@ -35,8 +35,23 @@ export function AudioExperience({ lang }: { lang: Language }) {
 
   const handleStart = () => {
     setStarted(true);
-    bgAudioRef.current?.play().catch(console.error);
-    voiceAudioRef.current?.play().catch(console.error);
+    
+    // Play the audio (catch errors if files are missing)
+    bgAudioRef.current?.play().catch(e => console.log('Audio file missing or blocked:', e));
+    voiceAudioRef.current?.play().catch(e => console.log('Audio file missing or blocked:', e));
+
+    // Fade out and stop completely after 50 seconds
+    setTimeout(() => {
+      const fadeInterval = setInterval(() => {
+        if (bgAudioRef.current && bgAudioRef.current.volume > 0.05) {
+          bgAudioRef.current.volume -= 0.05;
+        } else {
+          clearInterval(fadeInterval);
+          bgAudioRef.current?.pause();
+          voiceAudioRef.current?.pause();
+        }
+      }, 200); // Reduce volume every 200ms
+    }, 50000); // Start fading at 50 seconds
   };
 
   // The overlay before starting
