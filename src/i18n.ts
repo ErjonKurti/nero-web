@@ -13,7 +13,7 @@ export const translations = {
       title2: "TV & Movies",
       subtitle: "Discover an immersive library of titles in stunning quality constraint-free.",
       downloadApp: "Download App",
-      webApp: "Windows App",
+      webApp: "Web App",
     },
     platforms: {
       title: "Available Everywhere",
@@ -205,7 +205,7 @@ export const translations = {
       title2: "Filma & TV",
       subtitle: "Eksploroni bibliotekën e filmave me rezolucion mahnitës në çdo pajisje.",
       downloadApp: "Shkarko App",
-      webApp: "Windows App",
+      webApp: "Web App",
     },
     platforms: {
       title: "Kudo me ty",
