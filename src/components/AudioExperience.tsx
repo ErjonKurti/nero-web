@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Volume2, VolumeX, Power } from 'lucide-react';
 import { translations, Language } from '../i18n';
 
-// Placeholder URLs - drop your actual MP3 files into the public folder!
-const BG_MUSIC_URL = '/blur-menu.mp3'; // E.g., the Blur PC game menu music
-const EN_VOICEOVER_URL = '/voice.mp3'; // E.g., the cinematic AI voice
+// Placeholder URLs - drop your actual MP3 files into the public folder when you have them!
+const BG_MUSIC_URL = 'https://cdn.pixabay.com/download/audio/2022/11/22/audio_febc508520.mp3?filename=ambient-space-127532.mp3';
+const EN_VOICEOVER_URL = 'https://cdn.pixabay.com/download/audio/2023/04/10/audio_b282eb1034.mp3?filename=artificial-intelligence-142851.mp3';
 
 export function AudioExperience({ lang }: { lang: Language }) {
   const [started, setStarted] = useState(false);
