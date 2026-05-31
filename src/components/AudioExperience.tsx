@@ -4,8 +4,7 @@ import { translations, Language } from '../i18n';
 
 // Placeholder URLs - the user will need to replace these with actual files in the public folder
 const BG_MUSIC_URL = 'https://cdn.pixabay.com/download/audio/2022/11/22/audio_febc508520.mp3?filename=ambient-space-127532.mp3';
-const EN_VOICEOVER_URL = 'https://cdn.pixabay.com/download/audio/2023/04/10/audio_b282eb1034.mp3?filename=artificial-intelligence-142851.mp3'; // Placeholder
-const AL_VOICEOVER_URL = EN_VOICEOVER_URL; // Placeholder
+const EN_VOICEOVER_URL = 'https://cdn.pixabay.com/download/audio/2023/04/10/audio_b282eb1034.mp3?filename=artificial-intelligence-142851.mp3'; // Will be replaced with a Cinematic/Movie Trailer voice
 
 export function AudioExperience({ lang }: { lang: Language }) {
   const [started, setStarted] = useState(false);
@@ -19,7 +18,8 @@ export function AudioExperience({ lang }: { lang: Language }) {
     bgAudioRef.current.loop = true;
     bgAudioRef.current.volume = 0.3; // Low ambient volume
 
-    voiceAudioRef.current = new Audio(lang === 'en' ? EN_VOICEOVER_URL : AL_VOICEOVER_URL);
+    // Always play the English cinematic voiceover, regardless of AL/EN website language
+    voiceAudioRef.current = new Audio(EN_VOICEOVER_URL);
     voiceAudioRef.current.volume = 0.9;
 
     return () => {
@@ -27,17 +27,6 @@ export function AudioExperience({ lang }: { lang: Language }) {
       voiceAudioRef.current?.pause();
     };
   }, []); // Only run once to initialize
-
-  // Handle language switch: play new language voiceover if already started
-  useEffect(() => {
-    if (started && voiceAudioRef.current) {
-      voiceAudioRef.current.pause();
-      voiceAudioRef.current = new Audio(lang === 'en' ? EN_VOICEOVER_URL : AL_VOICEOVER_URL);
-      voiceAudioRef.current.volume = 0.9;
-      voiceAudioRef.current.muted = muted;
-      voiceAudioRef.current.play().catch(console.error);
-    }
-  }, [lang]);
 
   useEffect(() => {
     if (bgAudioRef.current) bgAudioRef.current.muted = muted;
