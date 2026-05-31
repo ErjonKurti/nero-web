@@ -129,16 +129,15 @@ export default function App() {
               loop 
               muted 
               playsInline
-              className="absolute inset-0 w-full h-full object-cover -z-10 opacity-70 animate-fade-in"
+              className="absolute inset-0 w-full h-full object-cover -z-10 opacity-100 animate-fade-in"
             >
               <source src="/hero-bg.mp4" type="video/mp4" />
             </video>
           ) : (
-            <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center -z-10 opacity-30 grayscale transition-all duration-1000"></div>
+            <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center -z-10 opacity-50 grayscale transition-all duration-1000"></div>
           )}
           
-          <div className="absolute inset-0 bg-black/30 -z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent -z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent -z-10"></div>
           <div className="relative p-6 sm:p-8 md:p-10 w-full z-10">
             <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[10px] sm:text-xs font-bold rounded-md uppercase tracking-widest mb-3 sm:mb-4 inline-block border border-red-500/30 backdrop-blur-md">
               {t.hero.badge}
