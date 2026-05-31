@@ -122,23 +122,23 @@ export default function App() {
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 flex-1 gap-4">
 
         {/* Main Hero Feature */}
-        <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-black relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl transition-all duration-1000">
+        <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-black relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl transition-all duration-1000 z-0">
           {experienceStarted ? (
             <video 
               autoPlay 
               loop 
               muted 
               playsInline
-              className="absolute inset-0 w-full h-full object-cover -z-10 opacity-100 animate-fade-in"
+              className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
             >
               <source src="/hero-bg.mp4" type="video/mp4" />
             </video>
           ) : (
-            <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center -z-10 opacity-50 grayscale transition-all duration-1000"></div>
+            <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center z-0 opacity-50 grayscale transition-all duration-1000"></div>
           )}
           
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent -z-10"></div>
-          <div className="relative p-6 sm:p-8 md:p-10 w-full z-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent z-10 pointer-events-none"></div>
+          <div className="relative p-6 sm:p-8 md:p-10 w-full z-20">
             <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[10px] sm:text-xs font-bold rounded-md uppercase tracking-widest mb-3 sm:mb-4 inline-block border border-red-500/30 backdrop-blur-md">
               {t.hero.badge}
             </span>
