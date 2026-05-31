@@ -88,7 +88,7 @@ export function useTVNav() {
     const next = findNearest(current, all, dir);
     if (next) {
       (next as HTMLElement).focus();
-      next.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      next.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
     }
   };
 
