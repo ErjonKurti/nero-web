@@ -54,7 +54,7 @@ export default function App() {
               className="flex items-center gap-1.5 bg-red-600/10 text-red-500 px-2.5 sm:px-4 py-2 text-xs sm:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all whitespace-nowrap cursor-pointer"
             >
               <MonitorPlay size={15} />
-              <span className="hidden xs:inline sm:inline">{t.nav.webVersion}</span>
+              <span>{t.nav.webVersion}</span>
             </a>
 
             {/* Language toggle — always visible */}
@@ -76,19 +76,14 @@ export default function App() {
             {/* Get Started */}
             <a
               href="#pricing"
-              className="px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-red-600 text-white text-xs sm:text-sm font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20 whitespace-nowrap"
+              className="hidden sm:inline-flex px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-red-600 text-white text-xs sm:text-sm font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20 whitespace-nowrap"
             >
               {t.nav.getStarted ?? 'Get Started'}
             </a>
           </div>
         </div>
 
-        {/* Mobile-only sub-row: page section links */}
-        <div className="flex lg:hidden justify-center gap-5 mt-2 pb-1 text-[11px] font-semibold text-white/40 px-4 border-t border-white/5 pt-2">
-          <a href="#pricing" tabIndex={0} className="hover:text-white transition-colors outline-none focus:text-white py-1 px-2 rounded">{t.nav.pricing}</a>
-          <a href="#features" tabIndex={0} className="hover:text-white transition-colors outline-none focus:text-white py-1 px-2 rounded">{t.nav.features}</a>
-          <a href="#download" tabIndex={0} className="hover:text-white transition-colors outline-none focus:text-white py-1 px-2 rounded">{t.nav.download}</a>
-        </div>
+
       </nav>
 
 
