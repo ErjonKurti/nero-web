@@ -35,8 +35,9 @@ export default function App() {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href="/app/Nero_TV_Installer_v1.4.4.exe"
-            download
+            href="https://live.neroapp.net"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:flex bg-red-600/10 text-red-500 px-4 py-2 text-xs md:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all items-center gap-2 whitespace-nowrap cursor-pointer"
           >
             <MonitorPlay size={16} /> {t.nav.webVersion}
@@ -90,8 +91,9 @@ export default function App() {
                 <Download className="w-5 h-5 stroke-[2.5]" /> {t.hero.downloadApp}
               </a>
               <a
-                href="/app/Nero_TV_Installer_v1.4.4.exe"
-                download
+                href="https://live.neroapp.net"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/10 text-sm sm:text-base transition-colors cursor-pointer"
               >
                 <MonitorPlay className="w-5 h-5 stroke-[2.5]" /> {t.hero.webApp}

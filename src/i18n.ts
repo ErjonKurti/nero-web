@@ -5,7 +5,7 @@ export const translations = {
       features: "Features",
       download: "Download",
       signIn: "Sign In",
-      webVersion: "Windows App",
+      webVersion: "Web App",
     },
     hero: {
       badge: "Now Available",
@@ -197,7 +197,7 @@ export const translations = {
       features: "Veçoritë",
       download: "Shkarkime",
       signIn: "Kyçu",
-      webVersion: "Windows App",
+      webVersion: "Web App",
     },
     hero: {
       badge: "E Disponueshme",
