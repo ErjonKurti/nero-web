@@ -40,7 +40,7 @@ export function AudioExperience({ lang }: { lang: Language }) {
     bgAudioRef.current?.play().catch(e => console.log('Audio file missing or blocked:', e));
     voiceAudioRef.current?.play().catch(e => console.log('Audio file missing or blocked:', e));
 
-    // Fade out and stop completely after 50 seconds
+    // Fade out and stop completely after 35 seconds
     setTimeout(() => {
       const fadeInterval = setInterval(() => {
         if (bgAudioRef.current && bgAudioRef.current.volume > 0.05) {
@@ -51,7 +51,7 @@ export function AudioExperience({ lang }: { lang: Language }) {
           voiceAudioRef.current?.pause();
         }
       }, 200); // Reduce volume every 200ms
-    }, 50000); // Start fading at 50 seconds
+    }, 35000); // Start fading at 35 seconds
   };
 
   // The overlay before starting
