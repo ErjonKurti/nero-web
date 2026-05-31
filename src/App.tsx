@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Tv, Film, MonitorPlay, Globe, Shield, X, Download, Users, CheckCircle, Smartphone, Apple, Zap, ChevronDown, PlayCircle, Trophy, Heart, Copy, Check } from 'lucide-react';
 import { translations, Language } from './i18n';
 import { useTVNav } from './hooks/useTVNav';
@@ -38,6 +38,15 @@ export default function App() {
   const [showSignIn, setShowSignIn] = useState(false);
   const [copied, setCopied] = useState(false);
   const [experienceStarted, setExperienceStarted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Handle video playback settings (start at 5s, speed 1.15x)
+  useEffect(() => {
+    if (experienceStarted && videoRef.current) {
+      videoRef.current.currentTime = 5;
+      videoRef.current.playbackRate = 1.15;
+    }
+  }, [experienceStarted]);
 
   // TV Remote spatial navigation
   useEffect(() => {
@@ -125,10 +134,16 @@ export default function App() {
         <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-black relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl transition-all duration-1000 z-0">
           {experienceStarted ? (
             <video 
+              ref={videoRef}
               autoPlay 
-              loop 
               muted 
               playsInline
+              onEnded={() => {
+                if (videoRef.current) {
+                  videoRef.current.currentTime = 5;
+                  videoRef.current.play();
+                }
+              }}
               className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
             >
               <source src="/hero-bg.mp4" type="video/mp4" />
