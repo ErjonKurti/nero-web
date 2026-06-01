@@ -311,7 +311,7 @@ export default function App() {
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.windows.version}</div>
                 <a
-                  href="/app/Nero_Tv_v2.0.0_Setup.exe"
+                  href="/app/Nero_v2.0.1_Setup.exe"
                   download
                   className="w-full bg-white text-black py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-600 hover:text-white transition-all shadow-xl shadow-black/20 cursor-pointer"
                 >
