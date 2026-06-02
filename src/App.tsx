@@ -32,7 +32,7 @@ export default function App() {
           <img 
             src="/hero-bg-posters.png" 
             alt="Background Posters" 
-            className="w-full h-full object-cover opacity-50 mix-blend-screen saturate-50"
+            className="w-full h-full object-cover opacity-30 mix-blend-screen saturate-50"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-[#050505] opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/40 to-transparent opacity-100" />
