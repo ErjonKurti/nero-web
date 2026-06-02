@@ -23,114 +23,109 @@ export default function App() {
   const t = translations[lang];
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden flex flex-col p-4 md:p-6 lg:p-8 gap-6 max-w-[1280px] mx-auto scroll-smooth">
+    <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden flex flex-col scroll-smooth">
 
-      <div className="fixed inset-0 pointer-events-none -z-50 bg-[#050505]">
-        <img 
-          src="/hero-bg-posters.png" 
-          alt="Background Posters" 
-          className="w-full h-full object-cover opacity-40 mix-blend-screen saturate-50"
-        />
-        {/* Netflix-style vignette overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] opacity-90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505] opacity-80" />
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
-
-      {/* Header Navigation */}
-      <nav className="relative z-50 shrink-0">
-        {/* Main nav row */}
-        <div className="flex justify-between items-center px-2 sm:px-4">
-          {/* Left: Logo + desktop nav links */}
-          <div className="flex items-center gap-6">
-            <a href="#" tabIndex={0} className="text-3xl sm:text-4xl font-black tracking-tighter text-red-600 outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded">NERO</a>
-            <div className="hidden lg:flex gap-6 text-sm font-medium opacity-60">
-              <a href="#pricing" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.pricing}</a>
-              <a href="#features" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.features}</a>
-              <a href="#download" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.download}</a>
-            </div>
-          </div>
-
-          {/* Right: all buttons */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Web App button — icon only on mobile, label on sm+ */}
-            <a
-              href="https://live.neroapp.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 bg-red-600/10 text-red-500 px-2.5 sm:px-4 py-2 text-xs sm:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all whitespace-nowrap cursor-pointer"
-            >
-              <MonitorPlay size={15} />
-              <span>{t.nav.webVersion}</span>
-            </a>
-
-            {/* Language toggle — always visible */}
-            <div className="flex bg-[#1a1a1a] p-0.5 sm:p-1 rounded-full border border-white/10">
-              <button
-                onClick={() => setLang('en')}
-                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black rounded-full transition-all ${lang === 'en' ? 'bg-white text-black shadow-lg' : 'text-white/50 hover:text-white'}`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLang('sq')}
-                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black rounded-full transition-all ${lang === 'sq' ? 'bg-white text-black shadow-lg' : 'text-white/50 hover:text-white'}`}
-              >
-                AL
-              </button>
-            </div>
-
-            {/* Get Started */}
-            <a
-              href="#pricing"
-              className="hidden sm:inline-flex px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-red-600 text-white text-xs sm:text-sm font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20 whitespace-nowrap"
-            >
-              {t.nav.getStarted ?? 'Get Started'}
-            </a>
-          </div>
+      {/* Full Bleed Hero Section */}
+      <div className="relative w-full min-h-[100svh] flex flex-col mb-10">
+        {/* Background Image & Netflix-style Overlays */}
+        <div className="absolute inset-0 pointer-events-none z-0 bg-[#050505]">
+          <img 
+            src="/hero-bg-posters.png" 
+            alt="Background Posters" 
+            className="w-full h-full object-cover opacity-50 mix-blend-screen saturate-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-[#050505] opacity-100" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/40 to-transparent opacity-100" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
+        {/* Header Navigation */}
+        <nav className="relative z-50 shrink-0 p-4 md:p-6 lg:p-8 max-w-[1280px] mx-auto w-full">
+          <div className="flex justify-between items-center px-2 sm:px-4">
+            {/* Left: Logo + desktop nav links */}
+            <div className="flex items-center gap-6">
+              <a href="#" tabIndex={0} className="text-3xl sm:text-4xl font-black tracking-tighter text-red-600 outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded">NERO</a>
+              <div className="hidden lg:flex gap-6 text-sm font-medium opacity-60">
+                <a href="#pricing" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.pricing}</a>
+                <a href="#features" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.features}</a>
+                <a href="#download" tabIndex={0} className="hover:opacity-100 outline-none focus:opacity-100 py-1 px-2 rounded">{t.nav.download}</a>
+              </div>
+            </div>
 
-      </nav>
-
-
-      {/* Bento Grid Main Layout */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 flex-1 gap-4">
-
-        {/* Main Hero Feature */}
-        <div className="md:col-span-12 lg:col-span-12 rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-t from-black via-black/40 to-transparent relative overflow-hidden group border border-white/5 min-h-[460px] sm:min-h-[initial] sm:aspect-video flex items-end shadow-2xl">
-          <div className="absolute inset-0 bg-[url('/final-movies.png')] bg-cover bg-center -z-10 opacity-70 group-hover:scale-105 transition-transform duration-700"></div>
-          <div className="absolute inset-0 bg-black/30 -z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent -z-10"></div>
-          <div className="relative p-6 sm:p-8 md:p-10 w-full z-10">
-            <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[10px] sm:text-xs font-bold rounded-md uppercase tracking-widest mb-3 sm:mb-4 inline-block border border-red-500/30 backdrop-blur-md">
-              {t.hero.badge}
-            </span>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-3 sm:mb-4 leading-[1.0] sm:leading-[0.9]">
-              {t.hero.title1}<br />
-              <span className="text-red-600">{t.hero.title2}</span>
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-lg mb-6 sm:mb-8 leading-relaxed">
-              {t.hero.subtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a
-                href="#download"
-                className="bg-white text-black px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/90 text-sm sm:text-base transition-colors"
-              >
-                <Download className="w-5 h-5 stroke-[2.5]" /> {t.hero.downloadApp}
-              </a>
+            {/* Right: all buttons */}
+            <div className="flex items-center gap-2 sm:gap-3">
               <a
                 href="https://live.neroapp.net"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/10 text-sm sm:text-base transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 bg-red-600/10 text-red-500 px-2.5 sm:px-4 py-2 text-xs sm:text-sm rounded-lg font-bold border border-red-500/20 hover:bg-red-600 hover:text-white transition-all whitespace-nowrap cursor-pointer"
               >
-                <MonitorPlay className="w-5 h-5 stroke-[2.5]" /> {t.hero.webApp}
+                <MonitorPlay size={15} />
+                <span>{t.nav.webVersion}</span>
+              </a>
+
+              {/* Language toggle */}
+              <div className="flex bg-[#1a1a1a] p-0.5 sm:p-1 rounded-full border border-white/10">
+                <button
+                  onClick={() => setLang('en')}
+                  className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black rounded-full transition-all ${lang === 'en' ? 'bg-white text-black shadow-lg' : 'text-white/50 hover:text-white'}`}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setLang('sq')}
+                  className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black rounded-full transition-all ${lang === 'sq' ? 'bg-white text-black shadow-lg' : 'text-white/50 hover:text-white'}`}
+                >
+                  AL
+                </button>
+              </div>
+
+              {/* Get Started */}
+              <a
+                href="#pricing"
+                className="hidden sm:inline-flex px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-red-600 text-white text-xs sm:text-sm font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20 whitespace-nowrap"
+              >
+                {t.nav.getStarted ?? 'Get Started'}
               </a>
             </div>
           </div>
+        </nav>
+
+        {/* Hero Content (Left Aligned over the dark gradient) */}
+        <div className="relative z-10 flex-1 flex flex-col justify-center p-4 md:p-6 lg:p-8 max-w-[1280px] mx-auto w-full pb-20">
+          <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[10px] sm:text-xs font-bold rounded-md uppercase tracking-widest mb-4 inline-block border border-red-500/30 backdrop-blur-md w-fit">
+            {t.hero.badge}
+          </span>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-4 leading-[1.1] sm:leading-[1.0] max-w-3xl">
+            {t.hero.title1}<br />
+            <span className="text-red-600">{t.hero.title2}</span>
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mb-8 leading-relaxed font-medium">
+            {t.hero.subtitle}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a
+              href="#download"
+              className="bg-white text-black px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/90 text-sm sm:text-base transition-colors"
+            >
+              <Download className="w-5 h-5 stroke-[2.5]" /> {t.hero.downloadApp}
+            </a>
+            <a
+              href="https://live.neroapp.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#111]/80 backdrop-blur-md border border-white/10 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2.5 sm:gap-3 hover:bg-white/10 text-sm sm:text-base transition-colors cursor-pointer"
+            >
+              <MonitorPlay className="w-5 h-5 stroke-[2.5]" /> {t.hero.webApp}
+            </a>
+          </div>
         </div>
+      </div>
+
+      {/* Main Container for rest of content */}
+      <div className="flex flex-col p-4 md:p-6 lg:p-8 gap-6 max-w-[1280px] mx-auto w-full relative z-20">
+        {/* Bento Grid Main Layout */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 flex-1 gap-4">
 
         {/* Technology Info Section */}
         <div className="md:col-span-12 lg:col-span-12 mt-15">
@@ -640,6 +635,7 @@ export default function App() {
           </div>
         </div>
 
+      </div>
       </div>
 
       {/* Footer / Legal */}
