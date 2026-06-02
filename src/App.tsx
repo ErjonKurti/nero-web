@@ -25,10 +25,17 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden flex flex-col p-4 md:p-6 lg:p-8 gap-6 max-w-[1280px] mx-auto scroll-smooth">
 
-      {/* Background Gradient */}
-      <div className="fixed top-0 left-0 w-full h-[80vh] pointer-events-none z-0" style={{
-        background: 'radial-gradient(120% 100% at 50% 0%, rgba(138, 10, 15, 0.45) 0%, rgba(5, 5, 5, 1) 100%)'
-      }} />
+      <div className="fixed inset-0 pointer-events-none -z-50 bg-[#050505]">
+        <img 
+          src="/hero-bg-posters.png" 
+          alt="Background Posters" 
+          className="w-full h-full object-cover opacity-40 mix-blend-screen saturate-50"
+        />
+        {/* Netflix-style vignette overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505] opacity-80" />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
       {/* Header Navigation */}
       <nav className="relative z-50 shrink-0">
