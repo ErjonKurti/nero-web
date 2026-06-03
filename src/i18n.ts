@@ -86,21 +86,21 @@ export const translations = {
       subtitle: "Experience NERO PLAYER on all your devices. Download our native apps for the best performance.",
       placeholder: "Email address",
       download: "Download Now",
-      comingSoon: "Coming Soon",
+      comingSoon: "Coming next month",
       windows: {
         title: "Windows Desktop",
         desc: "Full-featured desktop experience with hardware acceleration.",
-        version: "v2.1.2 (EXE Setup)",
+        version: "v3.0.0 (EXE Setup)",
       },
       android: {
         title: "Android Mobile/TV",
         desc: "Optimized for smartphones, tablets, and Android TV boxes.",
-        version: "v2.1.2 (APK)",
+        version: "v3.0.0 (APK)",
       },
       ios: {
         title: "iPhone / iPad",
         desc: "iOS application is currently under development. Stay tuned for the release!",
-        version: "Coming Soon",
+        version: "Coming next month",
       }
     },
     appInfo: {
@@ -281,12 +281,12 @@ export const translations = {
       windows: {
         title: "Windows Desktop",
         desc: "Eksperiencë e plotë për desktop me përshpejtim harduerik.",
-        version: "v2.1.2 (EXE Setup)",
+        version: "v3.0.0 (EXE Setup)",
       },
       android: {
         title: "Android Mobile/TV",
         desc: "Optimizuar për telefona, tableta dhe pajisje Android TV.",
-        version: "v2.1.2 (APK)",
+        version: "v3.0.0 (APK)",
       },
       ios: {
         title: "iPhone / iPad",
