@@ -151,7 +151,7 @@ export default function App() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
-              <span className="bg-white/20 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-6 inline-block backdrop-blur-md">Next-Gen Streaming</span>
+              <span className="bg-white/20 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-6 inline-block backdrop-blur-md">Next-Gen Media</span>
               <h2 className="text-4xl md:text-5xl font-black mb-6 leading-none">{t.player.title}</h2>
               <p className="text-white/80 font-medium mb-10 max-w-md">{t.player.subtitle}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
@@ -398,7 +398,7 @@ export default function App() {
                     <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0 mt-0.5">3</div>
                     <div className="text-left">
                       <h5 className="font-bold text-sm mb-1">Enter the Download Link</h5>
-                      <p className="text-white/50 text-xs leading-relaxed">Open Downloader, tap the URL bar and type the link below. It will download and install NERO TV automatically.</p>
+                      <p className="text-white/50 text-xs leading-relaxed">Open Downloader, tap the URL bar and type the link below. It will download and install NERO PLAYER automatically.</p>
                     </div>
                   </div>
                 </div>

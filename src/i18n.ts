@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       badge: "Now Available",
-      title1: "Stream Unlimited",
+      title1: "Play Unlimited",
       title2: "TV & Movies",
       subtitle: "Discover an immersive library of titles in stunning quality constraint-free.",
       downloadApp: "Download App",
@@ -25,7 +25,7 @@ export const translations = {
     },
     webLaunch: {
       title: "Watch in Browser",
-      subtitle: "No download required. Stream instantly.",
+      subtitle: "No download required. Play instantly.",
       button: "Launch Web TV",
     },
     featureSectionTitle: "Everything You Need",
@@ -58,7 +58,7 @@ export const translations = {
       period: "/ month",
       desc: "Managed via In-App Store",
       features: [
-        "4K & 8K Streams",
+        "4K & 8K Media",
         "Unlimited Devices",
         "No Hidden Fees",
         "24/7 Support"
@@ -83,7 +83,7 @@ export const translations = {
     },
     cta: {
       title: "Ready to watch?",
-      subtitle: "Experience NERO IPTV on all your devices. Download our native apps for the best performance.",
+      subtitle: "Experience NERO PLAYER on all your devices. Download our native apps for the best performance.",
       placeholder: "Email address",
       download: "Download Now",
       comingSoon: "Coming Soon",
@@ -105,15 +105,15 @@ export const translations = {
     },
     appInfo: {
       title: "Built with Modern Technology",
-      subtitle: "NERO IPTV is a high-performance streaming engine designed for the future.",
+      subtitle: "NERO PLAYER is a high-performance media engine designed for the future.",
       features: [
         {
           title: "Flutter Powered",
           desc: "Native performance across all platforms with a single codebase."
         },
         {
-          title: "Secure Streaming",
-          desc: "End-to-end encrypted streams ensuring your privacy and security."
+          title: "Secure Playback",
+          desc: "End-to-end encrypted media ensuring your privacy and security."
         },
         {
           title: "Intuitive UI",
@@ -152,7 +152,7 @@ export const translations = {
       },
       sports: {
         title: "Live Match Tracking",
-        desc: "Never miss a goal. Dedicated sports section with real-time match tracking and 4K streams for all major leagues.",
+        desc: "Never miss a goal. Dedicated sports section with real-time match tracking and 4K video for all major leagues.",
         tag: "Sports Center"
       },
       vod: {
@@ -185,7 +185,7 @@ export const translations = {
       ]
     },
     footer: {
-      rights: "© 2026 Nero Streaming Co. All rights reserved.",
+      rights: "© 2026 Nero Media Co. All rights reserved.",
       terms: "Terms",
       privacy: "Privacy",
       help: "Help"
@@ -274,7 +274,7 @@ export const translations = {
     },
     cta: {
       title: "Gati për të parë?",
-      subtitle: "Përjetoni NERO IPTV në të gjitha pajisjet tuaja. Shkarkoni aplikacionet tona native.",
+      subtitle: "Përjetoni NERO PLAYER në të gjitha pajisjet tuaja. Shkarkoni aplikacionet tona native.",
       placeholder: "Adresa email",
       download: "Shkarko Tani",
       comingSoon: "Së Shpejti",
@@ -296,7 +296,7 @@ export const translations = {
     },
     appInfo: {
       title: "Ndërtuar me Teknologji Moderne",
-      subtitle: "NERO IPTV është një motor transmetimi me performancë të lartë i dizajnuar për të ardhmen.",
+      subtitle: "NERO PLAYER është një motor medias me performancë të lartë i dizajnuar për të ardhmen.",
       features: [
         {
           title: "Fuqizuar nga Flutter",
@@ -376,7 +376,7 @@ export const translations = {
       ]
     },
     footer: {
-      rights: "© 2026 Nero Streaming Co. Të gjitha të drejtat.",
+      rights: "© 2026 Nero Media Co. Të gjitha të drejtat.",
       terms: "Kushtet",
       privacy: "Privatësia",
       help: "Ndihmë"
