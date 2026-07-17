@@ -313,7 +313,7 @@ export default function App() {
               <div className="mt-auto w-full">
                 <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.windows.version}</div>
                 <a
-                  href="/app/NeroPlayer_V7.0.0_Setup.exe"
+                  href="/app/NeroPlayer_V6.0.0_Setup.exe"
                   target="_blank" rel="noopener noreferrer"
                   className="w-full bg-white text-black py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-600 hover:text-white transition-all shadow-xl shadow-black/20 cursor-pointer"
                 >
