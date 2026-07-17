@@ -90,7 +90,7 @@ export const translations = {
       windows: {
         title: "Windows Desktop",
         desc: "Full-featured desktop experience with hardware acceleration.",
-        version: "v7.1.0 (EXE Setup)",
+        version: "v7.0.0 (EXE Setup)",
       },
       android: {
         title: "Android Mobile/TV",
@@ -281,7 +281,7 @@ export const translations = {
       windows: {
         title: "Windows Desktop",
         desc: "Eksperiencë e plotë për desktop me përshpejtim harduerik.",
-        version: "v7.1.0 (EXE Setup)",
+        version: "v7.0.0 (EXE Setup)",
       },
       android: {
         title: "Android Mobile/TV",
