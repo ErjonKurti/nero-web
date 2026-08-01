@@ -15,7 +15,7 @@ export default function App() {
   }, []);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.origin + '/app/NeroPlayer_V7.0.0.apk');
+    navigator.clipboard.writeText(window.location.origin + '/app/NeroPlayer_V8.1.1.apk');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -420,7 +420,7 @@ export default function App() {
                         {copied ? <><Check size={16} /> Copied!</> : <><Copy size={16} /> Copy Link</>}
                       </button>
                       <a
-                        href="/app/NeroPlayer_V7.0.0.apk"
+                        href="/app/NeroPlayer_V8.1.1.apk"
                         target="_blank" rel="noopener noreferrer"
                         className="bg-red-600 text-white px-5 py-3 rounded-xl font-black text-sm flex items-center gap-2 hover:bg-red-500 transition-all whitespace-nowrap"
                       >
