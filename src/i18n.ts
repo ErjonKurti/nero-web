@@ -95,7 +95,7 @@ export const translations = {
       android: {
         title: "Android Mobile/TV",
         desc: "Optimized for smartphones, tablets, and Android TV boxes.",
-        version: "v8.1.1 (APK)",
+        version: "v8.2.2 (APK)",
       },
       ios: {
         title: "iPhone / iPad",
@@ -286,7 +286,7 @@ export const translations = {
       android: {
         title: "Android Mobile/TV",
         desc: "Optimizuar për telefona, tableta dhe pajisje Android TV.",
-        version: "v8.1.1 (APK)",
+        version: "v8.2.2 (APK)",
       },
       ios: {
         title: "iPhone / iPad",
