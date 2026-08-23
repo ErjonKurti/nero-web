@@ -15,7 +15,7 @@ export default function App() {
   }, []);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.origin + '/app/NeroPlayer_V9.0.0.apk');
+    navigator.clipboard.writeText(window.location.origin + '/app/NeroPlayer_V9.1.1.apk');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -332,7 +332,7 @@ export default function App() {
                 <div className="mt-auto w-full">
                   <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">{t.cta.android.version}</div>
                   <a
-                    href="/app/NeroPlayer_V9.0.0.apk"
+                    href="/app/NeroPlayer_V9.1.1.apk"
                     target="_blank" rel="noopener noreferrer"
                     className="w-full bg-red-600 text-white py-4 rounded-2xl font-black text-sm flex items-center justify-center gap-3 hover:bg-red-500 transition-all shadow-xl shadow-red-900/20 cursor-pointer"
                   >
@@ -407,7 +407,7 @@ export default function App() {
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="text-left flex-1 min-w-0">
                       <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-1">Direct Download Link for Downloader App</div>
-                      <code className="text-red-400 font-bold text-sm break-all">{window.location.host}/app/NeroPlayer_V9.0.0.apk</code>
+                      <code className="text-red-400 font-bold text-sm break-all">{window.location.host}/app/NeroPlayer_V9.1.1.apk</code>
                     </div>
                     <div className="flex gap-3 shrink-0">
                       <button
@@ -420,7 +420,7 @@ export default function App() {
                         {copied ? <><Check size={16} /> Copied!</> : <><Copy size={16} /> Copy Link</>}
                       </button>
                       <a
-                        href="/app/NeroPlayer_V9.0.0.apk"
+                        href="/app/NeroPlayer_V9.1.1.apk"
                         target="_blank" rel="noopener noreferrer"
                         className="bg-red-600 text-white px-5 py-3 rounded-xl font-black text-sm flex items-center gap-2 hover:bg-red-500 transition-all whitespace-nowrap"
                       >
