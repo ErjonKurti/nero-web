@@ -641,9 +641,9 @@ export default function App() {
       <footer className="relative z-10 flex flex-col sm:flex-row justify-between items-center py-2 mt-4 text-[10px] uppercase tracking-widest text-white/30 gap-4 text-center sm:text-left border-t border-white/5 pt-4 shrink-0 font-bold">
         <p>{t.footer.rights}</p>
         <div className="flex gap-4 sm:gap-6 flex-wrap justify-center">
-          <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
-          <a href="#" className="hover:text-white transition-colors">{t.footer.terms}</a>
-          <a href="#" className="hover:text-white transition-colors">{t.footer.help}</a>
+          <a href="/privacy-policy.html" className="hover:text-white transition-colors">{t.footer.privacy}</a>
+          <a href="/terms.html" className="hover:text-white transition-colors">{t.footer.terms}</a>
+          <a href="mailto:support@neroapp.net" className="hover:text-white transition-colors">{t.footer.help}</a>
         </div>
       </footer>
 
